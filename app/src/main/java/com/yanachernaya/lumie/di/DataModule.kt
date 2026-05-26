@@ -1,8 +1,10 @@
 package com.yanachernaya.lumie.di
 
 import com.yanachernaya.lumie.data.repository.AffirmationRepositoryImpl
+import com.yanachernaya.lumie.data.repository.ImageRepositoryImpl
 import com.yanachernaya.lumie.data.repository.SettingsRepositoryImpl
 import com.yanachernaya.lumie.domain.repository.AffirmationRepository
+import com.yanachernaya.lumie.domain.repository.ImageRepository
 import com.yanachernaya.lumie.domain.repository.SettingsRepository
 import dagger.Binds
 import dagger.Module
@@ -25,4 +27,10 @@ interface DataModule {
     fun bindAffirmationRepository(
         impl: AffirmationRepositoryImpl
     ): AffirmationRepository
+
+    @Binds
+    @Singleton
+    fun bindImageRepository(
+        impl: ImageRepositoryImpl
+    ): ImageRepository
 }
