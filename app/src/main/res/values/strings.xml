@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Lumie</string>
+    <string name="starting_affirmation">Привет! Хочу напомнить: ты — твой самый важный человек</string>
 </resources>
