@@ -7,6 +7,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.yanachernaya.lumie.R
 import com.yanachernaya.lumie.data.local.database.AffirmationDao
 import com.yanachernaya.lumie.data.local.database.AppDatabase
+import com.yanachernaya.lumie.data.local.source.LocalContentDataSource
+import com.yanachernaya.lumie.data.local.source.LocalContentDataSourceImpl
 import com.yanachernaya.lumie.data.repository.AffirmationRepositoryImpl
 import com.yanachernaya.lumie.data.repository.ImageRepositoryImpl
 import com.yanachernaya.lumie.data.repository.SettingsRepositoryImpl
@@ -42,6 +44,12 @@ interface DataModule {
     fun bindImageRepository(
         impl: ImageRepositoryImpl
     ): ImageRepository
+
+    @Binds
+    @Singleton
+    fun bindLocalContentDataSource(
+        impl: LocalContentDataSourceImpl
+    ): LocalContentDataSource
 
     companion object {
         private const val DATABASE_NAME = "lumie_app.db"
