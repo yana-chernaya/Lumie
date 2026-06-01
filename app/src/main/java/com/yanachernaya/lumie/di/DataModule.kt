@@ -4,11 +4,14 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.yanachernaya.lumie.BuildConfig
 import com.yanachernaya.lumie.R
 import com.yanachernaya.lumie.data.local.database.AffirmationDao
 import com.yanachernaya.lumie.data.local.database.AppDatabase
 import com.yanachernaya.lumie.data.local.source.LocalContentDataSource
 import com.yanachernaya.lumie.data.local.source.LocalContentDataSourceImpl
+import com.yanachernaya.lumie.data.remote.LumieApiService
+import com.yanachernaya.lumie.data.remote.interceptor.AuthInterceptor
 import com.yanachernaya.lumie.data.repository.AffirmationRepositoryImpl
 import com.yanachernaya.lumie.data.repository.ImageRepositoryImpl
 import com.yanachernaya.lumie.data.repository.SettingsRepositoryImpl
@@ -21,6 +24,15 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Converter
+import retrofit2.Retrofit
+import retrofit2.converter.kotlinx.serialization.asConverterFactory
+import retrofit2.create
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -99,5 +111,61 @@ interface DataModule {
         fun provideAffirmationDao(
             database: AppDatabase
         ): AffirmationDao = database.affirmationDao()
+
+        @Provides
+        @Singleton
+        fun provideJson(): Json {
+            return Json {
+                ignoreUnknownKeys = true
+                coerceInputValues = true
+            }
+        }
+
+        @Provides
+        @Singleton
+        fun provideConverterFactory(
+            json: Json
+        ): Converter.Factory {
+            return json.asConverterFactory(
+                "application/json".toMediaType()
+            )
+        }
+
+        @Provides
+        @Singleton
+        fun provideOkHttpClient(): OkHttpClient {
+            val builder = OkHttpClient.Builder()
+                .addInterceptor(AuthInterceptor())
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+
+            if (BuildConfig.DEBUG) {
+                builder.addInterceptor(HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.BODY
+                })
+            }
+                return builder.build()
+        }
+
+        @Provides
+        @Singleton
+        fun provideRetrofit(
+            converterFactory: Converter.Factory,
+            okHttpClient: OkHttpClient
+        ): Retrofit {
+            return Retrofit.Builder()
+                .baseUrl("https://affirmation.blvck.myds.me/")
+                .client(okHttpClient)
+                .addConverterFactory(converterFactory)
+                .build()
+        }
+
+        @Provides
+        @Singleton
+        fun provideApiService(
+            retrofit: Retrofit
+        ): LumieApiService {
+            return retrofit.create()
+        }
     }
 }

@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -45,6 +46,23 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+
+    defaultConfig {
+
+        val properties = Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+
+        if (localPropertiesFile.exists()) {
+            localPropertiesFile.inputStream().use { inputStream ->
+                properties.load(inputStream)
+            }
+        }
+
+        val bearerToken = properties.getProperty("SERVER_BEARER_TOKEN") ?: ""
+
+        buildConfigField("String", "SERVER_BEARER_TOKEN", "\"$bearerToken\"")
     }
 }
 
