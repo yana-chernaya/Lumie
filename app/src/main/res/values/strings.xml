@@ -1,4 +1,50 @@
 <resources>
     <string name="app_name">Lumie</string>
     <string name="starting_affirmation">Привет! Хочу напомнить: ты — твой самый важный человек</string>
+
+
+    <string name="category_self_love">Любовь к себе</string>
+    <string name="category_motivation">Мотивация</string>
+    <string name="category_happiness">Счастье</string>
+    <string name="category_calm">Спокойствие</string>
+    <string name="category_health">Здоровье</string>
+    <string name="category_success">Успех</string>
+    <string name="category_relationship">Отношения</string>
+    <string name="category_confidence">Уверенность</string>
+    <string name="category_energy">"Энергия"</string>
+    <string name="category_gratitude">"Благодарность"</string>
+
+    <string name="title_share_affirmation">Поделиться аффирмацией</string>
+    <string name="title_preset_background">Фон аффирмации</string>
+    <string name="title_error_screen">Ой, связь с базой потеряна</string>
+    <string name="error_generic">Не удалось загрузить данные, попробуйте еще раз</string>
+    <string name="error_no_internet">Кажется, пропал интернет, проверьте подключение</string>
+    <string name="error_loading_affirmation">Не удалось загрузить аффирмацию, попробуйте еще раз</string>
+    <string name="error_category_update">Не удалось сменить категорию, попробуйте переключить снова</string>
+    <string name="error_toggling_favorite">Не удалось обновить Избранное, попробуйте снова</string>
+    <string name="error_save_to_gallery">Не удалось сохранить изображение, попробуйте снова</string>
+    <string name="error_save_to_cache">Не удалось подготовить изображение для отправки, попробуйте снова</string>
+    <string name="error_changing_background">Не удалось изменить фон, попробуйте снова</string>
+    <string name="error_no_sharing_app">Приложение для отправки не найдено</string>
+    <string name="error_share_process">Не удалось отправить аффирмацию, попробуйте снова</string>
+    <string name="error_image_capture">Не удалось подготовить изображение, попробуйте ещё раз</string>
+    <string name="image_not_ready">Изображение ещё не готово, подождите секунду</string>
+    <string name="success_save_to_gallery">Изображение успешно сохранено</string>
+    <string name="permission_denied_msg">Для сохранения аффирмации нужен доступ к памяти устройства</string>
+    <string name="dialog_no_wifi_title">Wi-Fi сейчас недоступен</string>
+    <string name="dialog_no_wifi_message">Загрузить аффирмацию через мобильную сеть? Это может расходовать трафик.</string>
+    <string name="dialog_btn_download">Загрузить</string>
+    <string name="dialog_btn_cancel">Отмена</string>
+    <string name="retry_button">Повторить попытку</string>
+    <string name="cd_navigation_home">Главная</string>
+    <string name="cd_navigation_favorite">Избранное</string>
+    <string name="cd_navigation_settings">Настройки</string>
+    <string name="cd_remove_like">Убрать лайк</string>
+    <string name="cd_like">Поставить лайк</string>
+    <string name="cd_download">Скачать аффирмацию</string>
+    <string name="cd_share">Поделиться аффирмацией</string>
+    <string name="cd_change_background">Изменить фон</string>
+    <string name="cd_close">Закрыть</string>
+    <string name="cd_background_item">Фон %1$d</string>
+
 </resources>
