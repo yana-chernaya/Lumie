@@ -9,7 +9,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.yanachernaya.lumie.domain.entity.AppTheme
-import com.yanachernaya.lumie.presentation.screens.details.AffirmationDetailsScreen
+import com.yanachernaya.lumie.presentation.screens.settings.SettingsScreen
 import com.yanachernaya.lumie.presentation.ui.theme.LumieTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,8 +33,7 @@ class MainActivity : ComponentActivity() {
             LumieTheme(
                 darkTheme = isDarkTheme
             ) {
-                AffirmationDetailsScreen(
-                    id = 1,
+                SettingsScreen(
                     onBackClick = {}
                 )
             }
