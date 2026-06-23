@@ -17,6 +17,8 @@
     <string name="title_share_affirmation">Поделиться аффирмацией</string>
     <string name="title_preset_background">Фон аффирмации</string>
     <string name="title_error_screen">Ой, связь с базой потеряна</string>
+    <string name="title_favorites_screen">Избранное</string>
+    <string name="title_empty_state">Здесь пока пусто...</string>
     <string name="error_generic">Не удалось загрузить данные, попробуйте еще раз</string>
     <string name="error_no_internet">Кажется, пропал интернет, проверьте подключение</string>
     <string name="error_loading_affirmation">Не удалось загрузить аффирмацию, попробуйте еще раз</string>
@@ -28,6 +30,7 @@
     <string name="error_no_sharing_app">Приложение для отправки не найдено</string>
     <string name="error_share_process">Не удалось отправить аффирмацию, попробуйте снова</string>
     <string name="error_image_capture">Не удалось подготовить изображение, попробуйте ещё раз</string>
+    <string name="error_remove_from_favorite">Не удалось убрать из Избранного, попробуйте еще раз</string>
     <string name="image_not_ready">Изображение ещё не готово, подождите секунду</string>
     <string name="success_save_to_gallery">Изображение успешно сохранено</string>
     <string name="permission_denied_msg">Для сохранения аффирмации нужен доступ к памяти устройства</string>
@@ -46,5 +49,7 @@
     <string name="cd_change_background">Изменить фон</string>
     <string name="cd_close">Закрыть</string>
     <string name="cd_background_item">Фон %1$d</string>
+    <string name="empty_list_by_category">Все аффирмации в данной категории были удалены из Избранного</string>
+    <string name="message_empty_state">Добавьте вдохновение на главном экране</string>
 
 </resources>

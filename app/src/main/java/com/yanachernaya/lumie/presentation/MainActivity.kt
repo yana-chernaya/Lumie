@@ -9,7 +9,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.yanachernaya.lumie.domain.entity.AppTheme
-import com.yanachernaya.lumie.presentation.screens.home.HomeScreen
+import com.yanachernaya.lumie.presentation.screens.favorites.FavoritesScreen
 import com.yanachernaya.lumie.presentation.ui.theme.LumieTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,9 +33,10 @@ class MainActivity : ComponentActivity() {
             LumieTheme(
                 darkTheme = isDarkTheme
             ) {
-                HomeScreen(
+                FavoritesScreen(
+                    onNavigateToHome = {},
                     onNavigateToSettings = {},
-                    onNavigateToFavorites = {}
+                    onNavigateToDetails = {}
                 )
             }
         }
