@@ -49,6 +49,7 @@
     <string name="cd_change_background">Изменить фон</string>
     <string name="cd_close">Закрыть</string>
     <string name="cd_background_item">Фон %1$d</string>
+    <string name="cd_back">Назад</string>
     <string name="empty_list_by_category">Все аффирмации в данной категории были удалены из Избранного</string>
     <string name="message_empty_state">Добавьте вдохновение на главном экране</string>
 

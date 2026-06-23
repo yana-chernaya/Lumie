@@ -462,3 +462,41 @@ fun PresetBackgroundSelector(
         )
     }
 }
+
+@Composable
+fun PresetBackgroundSelectionSheet(
+    title: Int = R.string.title_preset_background,
+    backgrounds: List<PresetBackground>,
+    onCloseClick: () -> Unit,
+    onChooseClick: (PresetBackground) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            IconButton(
+                modifier = Modifier,
+                onClick = onCloseClick
+            ) {
+                Icon(
+                    modifier = Modifier.size(26.dp),
+                    painter = painterResource(R.drawable.ic_close),
+                    contentDescription = stringResource(R.string.cd_close)
+                )
+            }
+            Text(
+                text = stringResource(title),
+                style = MaterialTheme.typography.headlineSmall
+            )
+        }
+
+        PresetBackgroundSelector(
+            backgrounds = backgrounds,
+            onBackgroundSelected = { onChooseClick(it) },
+            modifier = Modifier.padding(bottom = 16.dp),
+            contentPadding = PaddingValues(horizontal = 16.dp)
+        )
+    }
+}
