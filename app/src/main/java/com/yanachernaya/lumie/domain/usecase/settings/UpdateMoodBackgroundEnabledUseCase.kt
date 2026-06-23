@@ -1,4 +1,4 @@
-package com.example.lumie.domain.usecase.settings
+package com.yanachernaya.lumie.domain.usecase.settings
 
 import com.yanachernaya.lumie.domain.repository.SettingsRepository
 import javax.inject.Inject

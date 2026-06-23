@@ -19,6 +19,7 @@
     <string name="title_error_screen">Ой, связь с базой потеряна</string>
     <string name="title_favorites_screen">Избранное</string>
     <string name="title_empty_state">Здесь пока пусто...</string>
+    <string name="title_settings_screen">Настройки</string>
     <string name="error_generic">Не удалось загрузить данные, попробуйте еще раз</string>
     <string name="error_no_internet">Кажется, пропал интернет, проверьте подключение</string>
     <string name="error_loading_affirmation">Не удалось загрузить аффирмацию, попробуйте еще раз</string>
@@ -52,5 +53,32 @@
     <string name="cd_back">Назад</string>
     <string name="empty_list_by_category">Все аффирмации в данной категории были удалены из Избранного</string>
     <string name="message_empty_state">Добавьте вдохновение на главном экране</string>
+    <string name="error_updating_app_theme">Не удалось сменить тему, попробуйте еще раз</string>
+    <string name="error_updating_interval">Не удалось изменить интервал, попробуйте еще раз</string>
+    <string name="error_updating_preset_background">Не удалось применить фон, попробуйте еще раз</string>
+    <string name="error_updating_user_gender">Не удалось обновить профиль, попробуйте еще раз</string>
+    <string name="error_updating_mood_background">Не удалось переключить фон, попробуйте еще раз</string>
+    <string name="error_updating_wifi_only">Не удалось обновить настройки сети, попробуйте еще раз</string>
+    <string name="error_updating_notifications_enabled">Не удалось сохранить настройки уведомлений, попробуйте еще раз</string>
+    <string name="user_gender_female">Женский</string>
+    <string name="user_gender_male">Мужской</string>
+    <string name="interval_6_hours">6 часов</string>
+    <string name="interval_12_hours">12 часов</string>
+    <string name="interval_24_hours">24 часа</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Темная</string>
+    <string name="theme_system">Авто</string>
+    <string name="title_gender">Персонализация</string>
+    <string name="subtitle_gender">Чтобы мы обращались к вам правильно.</string>
+    <string name="title_interval">Частота обновлений</string>
+    <string name="subtitle_interval">Выберите комфортный для вас ритм обновления аффирмаций.</string>
+    <string name="title_theme">Тема</string>
+    <string name="subtitle_theme">Для комфорта ваших глаз.</string>
+    <string name="title_mood_background">Фон под настроение</string>
+    <string name="subtitle_mood_background">Позвольте автоматически подбирать атмосферный фон для каждой фразы.</string>
+    <string name="title_wifi_only">Обновление только по Wi-Fi</string>
+    <string name="subtitle_wifi_only">Чтобы не расходовать мобильный интернет.</string>
+    <string name="title_notifications">Уведомления</string>
+    <string name="subtitle_notifications">Чтобы поддержка и вдохновение всегда были рядом.</string>
 
 </resources>
