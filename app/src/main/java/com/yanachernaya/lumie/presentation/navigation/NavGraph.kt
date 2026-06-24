@@ -11,10 +11,11 @@ import androidx.navigation.navArgument
 import com.yanachernaya.lumie.presentation.screens.details.AffirmationDetailsScreen
 import com.yanachernaya.lumie.presentation.screens.favorites.FavoritesScreen
 import com.yanachernaya.lumie.presentation.screens.home.HomeScreen
+import com.yanachernaya.lumie.presentation.screens.home.HomeViewModel
 import com.yanachernaya.lumie.presentation.screens.settings.SettingsScreen
 
 @Composable
-fun NavGraph() {
+fun NavGraph(homeViewModel: HomeViewModel) {
     val navController = rememberNavController()
 
     NavHost(
@@ -23,6 +24,7 @@ fun NavGraph() {
     ) {
         composable(Screen.Home.route) {
             HomeScreen(
+                viewModel = homeViewModel,
                 onNavigateToFavorites = { navController.navigateBottomTab(Screen.Favorites.route) },
                 onNavigateToSettings = { navController.navigate(Screen.Settings.route) }
             )
