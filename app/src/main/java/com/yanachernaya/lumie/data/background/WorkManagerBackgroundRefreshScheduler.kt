@@ -33,7 +33,7 @@ class WorkManagerBackgroundRefreshScheduler @Inject constructor(
             repeatIntervalTimeUnit = TimeUnit.MINUTES
         )
             .setConstraints(constraints)
-//            .setInitialDelay(15L, TimeUnit.MINUTES)
+            .setInitialDelay(15L, TimeUnit.MINUTES)
             .build()
 
         workManager.enqueueUniquePeriodicWork(

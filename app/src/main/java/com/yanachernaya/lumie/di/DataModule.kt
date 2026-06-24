@@ -1,6 +1,8 @@
 package com.yanachernaya.lumie.di
 
+import android.app.NotificationManager
 import android.content.Context
+import androidx.core.content.getSystemService
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
@@ -182,5 +184,14 @@ interface DataModule {
         fun provideWorkManager(
             @ApplicationContext context: Context
         ): WorkManager = WorkManager.getInstance(context)
+
+        @Provides
+        @Singleton
+        fun provideNotificationManager(
+            @ApplicationContext context: Context,
+        ): NotificationManager =
+            requireNotNull(context.getSystemService<NotificationManager>()) {
+                "NotificationManager system service is unavailable"
+            }
     }
 }

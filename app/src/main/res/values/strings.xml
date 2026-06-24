@@ -17,7 +17,7 @@
     <string name="title_preset_background">Фон аффирмации</string>
     <string name="title_error_screen">Ой, связь с базой потеряна</string>
     <string name="title_favorites_screen">Избранное</string>
-    <string name="title_empty_state">Здесь пока пусто...</string>
+    <string name="title_empty_state">Здесь пока пусто…</string>
     <string name="title_settings_screen">Настройки</string>
     <string name="error_generic">Не удалось загрузить данные, попробуйте еще раз</string>
     <string name="error_no_internet">Кажется, пропал интернет, проверьте подключение</string>
@@ -79,5 +79,7 @@
     <string name="subtitle_wifi_only">Чтобы не расходовать мобильный интернет.</string>
     <string name="title_notifications">Уведомления</string>
     <string name="subtitle_notifications">Чтобы поддержка и вдохновение всегда были рядом.</string>
-
+    <string name="new_affirmation_name_of_channel">Новая аффирмация</string>
+    <string name="new_affirmation_notification_title">Новая аффирмация</string>
+    <string name="new_affirmation_channel_description">Регулярные уведомления с новыми аффирмациями</string>
 </resources>
