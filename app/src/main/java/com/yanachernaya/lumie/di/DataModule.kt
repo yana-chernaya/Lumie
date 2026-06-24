@@ -4,8 +4,10 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.work.WorkManager
 import com.yanachernaya.lumie.BuildConfig
 import com.yanachernaya.lumie.R
+import com.yanachernaya.lumie.data.background.WorkManagerBackgroundRefreshScheduler
 import com.yanachernaya.lumie.data.local.database.AffirmationDao
 import com.yanachernaya.lumie.data.local.database.AppDatabase
 import com.yanachernaya.lumie.data.local.source.LocalContentDataSource
@@ -18,6 +20,7 @@ import com.yanachernaya.lumie.data.repository.SettingsRepositoryImpl
 import com.yanachernaya.lumie.domain.repository.AffirmationRepository
 import com.yanachernaya.lumie.domain.repository.ImageRepository
 import com.yanachernaya.lumie.domain.repository.SettingsRepository
+import com.yanachernaya.lumie.domain.scheduler.BackgroundRefreshScheduler
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -62,6 +65,12 @@ interface DataModule {
     fun bindLocalContentDataSource(
         impl: LocalContentDataSourceImpl
     ): LocalContentDataSource
+
+    @Binds
+    @Singleton
+    fun bindBackgroundRefreshScheduler(
+        impl: WorkManagerBackgroundRefreshScheduler
+    ): BackgroundRefreshScheduler
 
     companion object {
         private const val DATABASE_NAME = "lumie_app.db"
@@ -144,7 +153,7 @@ interface DataModule {
                     level = HttpLoggingInterceptor.Level.BODY
                 })
             }
-                return builder.build()
+            return builder.build()
         }
 
         @Provides
@@ -167,5 +176,11 @@ interface DataModule {
         ): LumieApiService {
             return retrofit.create()
         }
+
+        @Provides
+        @Singleton
+        fun provideWorkManager(
+            @ApplicationContext context: Context
+        ): WorkManager = WorkManager.getInstance(context)
     }
 }
