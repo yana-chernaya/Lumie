@@ -8,8 +8,8 @@ The app generates personalized affirmations with beautiful dynamic backgrounds, 
 ## Demo
 <table>
   <tr>
-    <td align="center"><b>Content & Network</b></td>
-    <td align="center"><b>Feed & Custom Gestures</b></td>
+    <td align="center"><b>Generation & Wi‑Fi‑only</b></td>
+    <td align="center"><b>Feed & Interaction</b></td>
   </tr>
   <tr>
     <td align="center" width="250">
@@ -24,7 +24,7 @@ The app generates personalized affirmations with beautiful dynamic backgrounds, 
 <table>
   <tr>
     <td align="center"><b>Favorites</b></td>
-    <td align="center"><b>Settings & UI States</b></td>
+    <td align="center"><b>Settings & Empty State</b></td>
   </tr>
   <tr>
     <td align="center" width="250">
